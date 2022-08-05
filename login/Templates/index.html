@@ -1,0 +1,45 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title> Memories </title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">					
+	</head>
+	<body>
+		<div class="whole">
+			<div class="header"><h1 id="heading">Memories</h1></div>
+		<div class="Bar">
+		<nav >
+			<ul>
+				<div class="list">
+				<li class="active"><a href="{{url_for('index')}}">Memories</a></li>
+				<li><a href="{{url_for('profile')}}">profile</a></li>
+				
+				<li><a href="{{url_for('update')}}">Update your profile</a></li>
+				<li><a href="{{url_for('logout')}}">Log out</a></li></div>
+			</ul> </nav>
+		</div>
+		<div align="center">
+		<div align="center" class="border">
+			
+				
+			
+			<div class="search">
+				<form action="{{url_for('search')}}", method="post" autocomplete="off">
+					<input type="text" placeholder="search" name="name" >
+					<label for="search"></br></br></label>
+				 	<input type="button" value="search" > 
+				
+				</form><br>
+				
+			</div><br>
+				<h1 class="bottom">
+					Hi {{session.username}}!!</br></br> Welcome to your Memories...				
+				</h1>
+            <h2>let's dive to the beautifull memories and stories</h2>
+				<img src="https://www.thenewsminute.com/sites/default/files/NITTrichy_WikiCommons_1200_26122020-compressed.jpg" alt="Nit Trichy" width="500" height="300" class="nit">
+				
+		</div>
+		</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update your profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="header"><h1 id="heading">Memories</h1></div>
+    <div class="Bar">
+        
+        <ul>
+            <li class="active"><a href="{{url_for('index')}}">Memories</a></li>
+            <li><a href="{{url_for('profile')}}">Profile</a></li>
+            <li><a href="{{url_for('update')}}">Update your profile</a></li>
+            <li><a href="{{url_for('logout')}}">Log out</a></li>
+        </ul> 
+    </div>
+    <div align="center">
+		<div align="center" class="border">
+			
+				
+			
+            <h2 class="bottom">
+                update your profile				
+            </h2></br>{% block content %}
+            <div class="update_bar">
+                <form action="{{ url_for('update') }}" method="post" autocomplete="off">
+                <div class="msg">{{ msg }}</div>  
+                    <input type="name" name="name" placeholder="Enter Your Name" class="textbox" id="name" required></br></br> 
+                    <input type="text" name="username" placeholder="Enter Your Username" class="textbox" id="username" required></br></br>
+                    <input type="password" name="password" placeholder="Enter Your Password" class="textbox" id="password" required></br></br>
+                    <input type="email" name="email" placeholder="Enter Your Email ID" class="textbox" id="email" required></br></br>
+                    <input type="nickname" name="nickname" placeholder="nickname" class="textbox" id="nickname" required></br></br>  
+                    <input type="hobby" name="hobby" placeholder="Enter Your hobby" class="textbox" id="hobby" required></br></br>
+                    <input type="submit" class="btn" value="Update">
+                    
+                </form>
+            </div>
+            {% endblock %}
+        </div>
+    </div>
+
+</body>
+</html>

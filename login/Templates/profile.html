@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{session.name}} profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="header"><h1 id="heading">Memories</h1></div>
+    <div class="Bar">
+        
+        <ul>
+            <li ><a href="{{url_for('index')}}">Memories</a></li>
+            <li class="active"><a href="{{url_for('profile')}}">Profile</a></li>
+            <li><a href="{{url_for('update')}}">Update your profile</a></li>
+            <li><a href="{{url_for('logout')}}">Log out</a></li>
+        </ul>
+    </div><br><br>
+    <div align="center">
+        <div align="center" class="border">
+
+
+            
+            <h2 class="bottom" style="text-align: centre;">
+                Your Profile
+            </h2></br>
+            <div class="border">
+                <table class="worddark"></br></br></br></br>
+                    <tr>
+                        <td id="c1">Name:</td>
+                        <td id="c2">{{ Account['name'] }}</td>
+                    </tr>
+                    <tr>
+                        <td id="c1">Username:</td>
+                        <td id="c2">{{ Account['username'] }}</td>
+                    </tr>
+                    <tr>
+                        <td id="c1">Email ID:</td>
+                        <td id="c2">{{ Account['email'] }}</td>
+                    </tr>
+                    <tr>
+                        <td id="c1">Nickname: </td>
+                        <td id="c2">{{Account['nickname']}}</td> 
+                    </tr>
+                    <tr>
+                        <td id="c1">Hobby: </td>
+                        <td id="c2">{{Account['hobby']}}</td>
+                    </tr>
+                    
+                </table><br><br>
+                <form action="{{ url_for('comment') }}" method="post">
+                    <div class="msg">{{ msg }}</div>
+                    <input type="text" name="your comment" id="comment"></br></br>
+                    <input type="button" name="submit" id="btn" value="submit">
+                </form>
+                
+            </div>
+        </div>
+        
+    </div>
+</body>
+
+</html>
